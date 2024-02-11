@@ -12,10 +12,6 @@ export const GetSysUserListByPage = (current,limit,queryDto) => {
     })
 }
 
-
-
-
-
 /**
  * 用户添加
  * @param sysUser
@@ -54,5 +50,13 @@ export const DeleteSysUser = (userId)=> {
     return request({
         url: `${base_api}/deleteById/${userId}`, //路径
         method: 'delete',
+    })
+}
+
+export const DoAssignRoleToUser = (assignRoleVo)=>{
+    return request({
+        url:`${base_api}/doAssign`,
+        method:"post",
+        data:assignRoleVo
     })
 }
